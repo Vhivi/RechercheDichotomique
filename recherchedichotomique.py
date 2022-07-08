@@ -20,15 +20,15 @@ def rechercheDichotomique(valeur, tableautrilist):
     # Vérification si le tableau n'est pas vide
     if tailletableau == 0:
         return print('Le tableau est vide')
-    
+
     # Si le tableau ne contient qu'une valeur et qu'elle n'est pas recherchée
     if tailletableau == 1 and valeur != tableautrilist[0]:
         return print('La valeur recherchée {} n\'existe pas dans le tableau.'
                      .format(valeur))
-    
+
     # Trouver la position centrale du tableau
     positioncentrale = round(tailletableau / 2)
-    
+
     # Comparaison de la valeur recherchée avec la position centrale
     # Si la valeur est égale, on retourne
     if valeur == tableautrilist[positioncentrale]:
@@ -40,7 +40,8 @@ def rechercheDichotomique(valeur, tableautrilist):
         rechercheDichotomique(valeur, tableautrilist[0:positioncentrale])
     # Sinon
     else:
-        rechercheDichotomique(valeur, tableautrilist[positioncentrale:tailletableau])
+        rechercheDichotomique(valeur,
+                              tableautrilist[positioncentrale:tailletableau])
 
 
 def main():
@@ -50,14 +51,14 @@ def main():
     tableaulen = random.randint(1, 5000)
     # Remplissage aléatoire du tableau
     for i in range(0, tableaulen):
-        tableaulist.append(random.randint(0,i))
-    
+        tableaulist.append(random.randint(0, i))
+
     # Triage du tableau
     tableautrilist = sorted(tableaulist)
-    
+
     # Demande de la valeur recherchée
     valeur = int(input('Quelle valeur recherchez-vous ?'))
-    
+
     # Appel de la recherche puis afficher le résultat
     rechercheDichotomique(valeur, tableautrilist)
 
