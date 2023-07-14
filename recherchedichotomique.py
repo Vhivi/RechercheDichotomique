@@ -43,7 +43,6 @@ def rechercheDichotomique(valeur, tableautrilist):
         rechercheDichotomique(valeur,
                               tableautrilist[positioncentrale:tailletableau])
 
-
 def main():
     # Création d'un tableau
     tableaulist = []
